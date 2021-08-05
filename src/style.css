@@ -121,3 +121,9 @@ button {
   font-size: 15px;
   background-color: #ffffff;
 }
+
+.signature {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+}
