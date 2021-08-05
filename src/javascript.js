@@ -21,7 +21,7 @@ function city(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search");
   let changeCity = document.querySelector("#city-name");
-  changeCity.innerHTML = word.value;
+  changeCity.innerHTML = cityInput.value;
   searchWeather(cityInput.value);
 }
 let submit = document.querySelector("#engine");
