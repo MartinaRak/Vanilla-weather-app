@@ -15,12 +15,14 @@ let minutes = time.getMinutes();
 let date = document.querySelector("#date");
 date.innerHTML = `${day}, ${hour}:${minutes}`;
 
+//Main search function
+
 function city(event) {
   event.preventDefault();
-  let word = document.querySelector("#search");
+  let cityInput = document.querySelector("#search");
   let changeCity = document.querySelector("#city-name");
   changeCity.innerHTML = word.value;
-  searchWeather(word.value);
+  searchWeather(cityInput.value);
 }
 let submit = document.querySelector("#engine");
 submit.addEventListener("submit", city);
@@ -30,6 +32,8 @@ function searchWeather(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(`${apiUrl}`).then(searchTemp);
 }
+
+//Shows temperature, condition, humidity, windspeed and icon
 
 function searchTemp(response) {
   celsiusTemp = response.data.main.temp;
@@ -51,7 +55,15 @@ function searchTemp(response) {
   let wind = Math.round(response.data.wind.speed);
   let displayWind = document.querySelector("#wind");
   displayWind.innerHTML = `Wind: ${wind} km/h`;
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
+//Button for current location
 
 function showCurrent(position) {
   let apiKey = "6aeef2ad470d059da56cf04d1367bfcf";
@@ -64,6 +76,8 @@ function findOutLocation(event) {
 }
 let findOutCurrent = document.querySelector("#current-button");
 findOutCurrent.addEventListener("click", findOutLocation);
+
+//Conversion between C and F
 
 function switchF(event) {
   event.preventDefault();
@@ -84,5 +98,3 @@ let changeToC = document.querySelector("#c");
 changeToC.addEventListener("click", switchC);
 
 let celsiusTemp = null;
-
-//document.getElementById("c").setAttribute("click", "color:#fff");
