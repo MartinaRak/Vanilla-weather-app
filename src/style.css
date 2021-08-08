@@ -6,9 +6,11 @@ body {
     rgba(139, 192, 216, 0.73) 80%
   );
 }
+
 footer {
   margin-top: 200px;
 }
+
 h1 {
   font-size: 45px;
   font-weight: bold;
@@ -39,13 +41,27 @@ button {
   background-color: #ffffcc;
 }
 
+.cf {
+  font-size: 15px;
+  display: block;
+  margin-left: 192px;
+  margin-top: -21px;
+}
+
+.container {
+  margin-left: 40px;
+  margin-bottom: 50px;
+}
+
 .form-control {
   max-width: 300px;
   margin-top: 50px;
 }
 
-.row {
-  margin-top: 70px;
+.info {
+  font-size: 15px;
+  opacity: 0.8;
+  display: block;
 }
 
 .main {
@@ -53,16 +69,14 @@ button {
   display: block;
 }
 
-#icon {
-  width: 100px;
-  margin-top: 20px;
+.row {
+  margin-top: 70px;
 }
 
-.cf {
-  font-size: 15px;
+.signature {
   display: block;
-  margin-left: 192px;
-  margin-top: -21px;
+  text-align: center;
+  font-size: 12px;
 }
 
 #c {
@@ -73,37 +87,6 @@ button {
 #c:hover {
   cursor: pointer;
   font-weight: bold;
-}
-
-#f {
-  display: block;
-  margin-left: 200px;
-  margin-top: -23px;
-}
-#f:hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.info {
-  font-size: 15px;
-  opacity: 0.8;
-  display: block;
-}
-
-#search {
-  display: block;
-}
-#search-button {
-  display: block;
-  max-width: 80px;
-  margin-left: 200px;
-  margin-top: 10px;
-}
-
-.container {
-  margin-left: 40px;
-  margin-bottom: 50px;
 }
 
 #condition {
@@ -122,8 +105,29 @@ button {
   background-color: #ffffff;
 }
 
-.signature {
+#f {
   display: block;
-  text-align: center;
-  font-size: 12px;
+  margin-left: 200px;
+  margin-top: -23px;
+}
+
+#f:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#icon {
+  width: 100px;
+  margin-top: 20px;
+}
+
+#search {
+  display: block;
+}
+
+#search-button {
+  display: block;
+  max-width: 80px;
+  margin-left: 200px;
+  margin-top: 10px;
 }
