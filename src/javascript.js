@@ -98,3 +98,5 @@ let changeToC = document.querySelector("#c");
 changeToC.addEventListener("click", switchC);
 
 let celsiusTemp = null;
+
+searchWeather("Inverness");
