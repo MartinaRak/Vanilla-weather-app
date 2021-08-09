@@ -38,7 +38,7 @@ button {
   margin-top: 60px;
   background-color: #ffffcc;
   max-width: 550px;
-  padding-bottom: 300px;
+  padding-bottom: 20px;
 }
 
 .cf {
@@ -56,6 +56,15 @@ button {
 .forecast {
   margin-left: 380px;
   margin-top: -400px;
+}
+
+.forecast-day {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.forecast-min {
+  opacity: 0.6;
 }
 
 .form-control {
@@ -76,6 +85,11 @@ button {
 
 .row {
   margin-top: 70px;
+}
+
+.row-forecast {
+  margin-top: 10px;
+  text-align: center;
 }
 
 .signature {

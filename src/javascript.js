@@ -15,6 +15,34 @@ let minutes = time.getMinutes();
 let date = document.querySelector("#date");
 date.innerHTML = `${day}, ${hour}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let day = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = "";
+  day.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="row-forecast">
+      <div class="col-6">
+      <div class="forecast-day">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="45"
+        />
+       <div class="forecast-temp">
+        <span class="forecast-max">25°</span>
+       <span class="forecast-min">20°</span>
+       </div>
+      </div>
+     `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Main search function
 
 function city(event) {
@@ -100,3 +128,4 @@ changeToC.addEventListener("click", switchC);
 let celsiusTemp = null;
 
 searchWeather("Inverness");
+displayForecast();
