@@ -8,7 +8,7 @@ body {
 }
 
 footer {
-  margin-top: 200px;
+  margin-bottom: 300px;
 }
 
 h1 {
@@ -31,14 +31,14 @@ button {
 }
 
 .box {
-  max-width: 400px;
-  max-height: 800px;
   display: block;
   border: 1px solid grey;
   border-radius: 30px;
   margin: 0 auto;
   margin-top: 60px;
   background-color: #ffffcc;
+  max-width: 550px;
+  padding-bottom: 300px;
 }
 
 .cf {
@@ -51,6 +51,11 @@ button {
 .container {
   margin-left: 40px;
   margin-bottom: 50px;
+}
+
+.forecast {
+  margin-left: 380px;
+  margin-top: -400px;
 }
 
 .form-control {
@@ -99,8 +104,8 @@ button {
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #aaaaaa;
-  margin-left: 160px;
-  margin-top: -40px;
+  margin-left: 400px;
+  margin-top: -38px;
   font-size: 15px;
   background-color: #ffffff;
 }
@@ -109,6 +114,7 @@ button {
   display: block;
   margin-left: 200px;
   margin-top: -23px;
+  max-width: 10px;
 }
 
 #f:hover {
@@ -128,6 +134,6 @@ button {
 #search-button {
   display: block;
   max-width: 80px;
-  margin-left: 200px;
-  margin-top: 10px;
+  margin-left: 300px;
+  margin-top: -38px;
 }

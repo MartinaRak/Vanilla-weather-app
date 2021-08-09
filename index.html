@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
-    <link rel="shortcut icon" type="image/png" href="src/sun.png">
+    <link rel="shortcut icon" type="image/png" href="src/sun.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
@@ -47,16 +47,29 @@
             <div id="date">(Current date)</div>
             <img id="icon" src="src/sun.png" alt="Sun" />
             <h1 id="current-temp">23</h1>
-            <span class="cf" id="c">°C</span>  
-            <span class="cf"> | </span>  
-            <span class="cf" id="f">°F</span>  
+            <span class="cf" id="c">°C</span>
+            <span class="cf"> | </span>
+            <span class="cf" id="f">°F</span>
             <span id="condition">Sunny</span>
-            <span class="main"> in </span>
+            <span class="main" id="in">in</span>
             <h2 id="city-name">London</h2>
             <span class="info" id="humidity"> Humidity: 60%</span>
             <span class="info" id="wind">Wind: 15 km/h</span>
           </div>
-          
+        </div>
+        <div class="forecast">
+          <div class="row-forecast">
+            <div class="col-6">
+              <div class="forecast-day">Tue</div>
+              <img
+                src="http://openweathermap.org/img/wn/50d@2x.png"
+                alt=""
+                width="45"
+              />
+              <div class="forecast-temp">
+                <span class="forecast-max">25°</span>
+                <span class="forecast-min">20°</span>
+              </div>
             </div>
           </div>
         </div>
@@ -72,6 +85,5 @@
     >
     <script src="src/javascript.js"></script>
   </body>
-  <footer>
-  </footer>
+  <footer></footer>
 </html>
