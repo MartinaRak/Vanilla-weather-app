@@ -15,32 +15,51 @@ let minutes = time.getMinutes();
 let date = document.querySelector("#date");
 date.innerHTML = `${day}, ${hour}:${minutes}`;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
 
-  let day = ["Thu", "Fri", "Sat", "Sun"];
-  let forecastHTML = "";
-  day.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="row-forecast">
+//Forecast HTML
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.daily;
+  let forecastHTML = `<div class="row-forecast">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-6">
-      <div class="forecast-day">${day}</div>
+      <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
           alt=""
-          width="45"
+          width="40"
         />
        <div class="forecast-temp">
-        <span class="forecast-max">25°</span>
-       <span class="forecast-min">20°</span>
+        <span class="forecast-max">${Math.round(forecastDay.temp.max)}°</span>
+       <span class="forecast-min">${Math.round(forecastDay.temp.min)}°</span>
        </div>
       </div>
      `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+//Searches for forecast data
+
+function getForecast(coordinates) {
+  let apiKey = "6aeef2ad470d059da56cf04d1367bfcf";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //Main search function
@@ -89,6 +108,8 @@ function searchTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 //Button for current location
@@ -128,4 +149,3 @@ changeToC.addEventListener("click", switchC);
 let celsiusTemp = null;
 
 searchWeather("Inverness");
-displayForecast();
