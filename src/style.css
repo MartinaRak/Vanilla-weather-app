@@ -36,7 +36,11 @@ button {
   border-radius: 30px;
   margin: 0 auto;
   margin-top: 60px;
-  background-color: #ffffcc;
+  background: linear-gradient(
+    -20deg,
+    rgb(233, 222, 250) 0%,
+    rgb(251, 252, 219) 100%
+  );
   max-width: 550px;
   padding-bottom: 20px;
 }
