@@ -126,26 +126,4 @@ function findOutLocation(event) {
 let findOutCurrent = document.querySelector("#current-button");
 findOutCurrent.addEventListener("click", findOutLocation);
 
-//Conversion between C and F
-
-function switchF(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
-  let fahrElement = document.querySelector("h1");
-  fahrElement.innerHTML = Math.round(fahrenheitTemperature) + "°F";
-}
-let changeToF = document.querySelector("#f");
-changeToF.addEventListener("click", switchF);
-
-function switchC(event) {
-  event.preventDefault();
-  let celsiusTemperature = celsiusTemp;
-  let celsiusElement = document.querySelector("h1");
-  celsiusElement.innerHTML = Math.round(celsiusTemperature) + "°C";
-}
-let changeToC = document.querySelector("#c");
-changeToC.addEventListener("click", switchC);
-
-let celsiusTemp = null;
-
 searchWeather("Inverness");

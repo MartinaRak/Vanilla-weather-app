@@ -45,13 +45,6 @@ button {
   padding-bottom: 20px;
 }
 
-.cf {
-  font-size: 15px;
-  display: block;
-  margin-left: 192px;
-  margin-top: -21px;
-}
-
 .container {
   margin-left: 40px;
   margin-bottom: 50px;
@@ -101,16 +94,6 @@ button {
   font-size: 12px;
 }
 
-#c {
-  margin-left: 175px;
-  display: block;
-}
-
-#c:hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-
 #condition {
   font-size: 20px;
   font-weight: bold;
@@ -125,18 +108,6 @@ button {
   margin-top: -38px;
   font-size: 15px;
   background-color: #ffffff;
-}
-
-#f {
-  display: block;
-  margin-left: 200px;
-  margin-top: -23px;
-  max-width: 10px;
-}
-
-#f:hover {
-  cursor: pointer;
-  font-weight: bold;
 }
 
 #icon {
